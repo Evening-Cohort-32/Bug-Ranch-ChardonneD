@@ -7,7 +7,7 @@ const createRivers = () => {
 
 const createMountains = () => {
     const mountains = Math.floor(Math.random() * 2) + 1
-    return mountains
+    return mauntains
 }
 
 const createForests = () => {
@@ -24,10 +24,10 @@ const journeyMaker = () => {
     const journey = []
 
     const areas = {
-        rivers: createRivers(),
-        forests: createForests(),
-        mountains: createMountains(),
-        plains: createPlains()
+        rivers: createRiver(),
+        forests: createForest(),
+        mountains: createMountain(),
+        plains: createPlain()
     }
 
     for (let riverNumber = 0; riverNumber < areas.rivers; riverNumber++) {
@@ -38,7 +38,7 @@ const journeyMaker = () => {
         journey.push("forest")
     }
 
-    for (let mountainNumber = 0; mountainNumber < areas.mountains; mountainNumber++) {
+    for (let mountainNumber = 0; mountainNumber < areas.mountain; mountainNumber++) {
         journey.push("mountain")
     }
 
@@ -51,5 +51,5 @@ const journeyMaker = () => {
 
 module.exports = {
     createRivers, createForests,
-    createMountains, createPlains, journeyMaker
+    createMountains, createPlains
 }

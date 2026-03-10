@@ -1,0 +1,29 @@
+title Kansas Slims Cattle
+
+
+ Main->>Cattle: require("./cattle.js")
+ Main->>Drovers: require("./drovers.js")
+ Main->>Journey: require("./journey.js")
+
+Main->>Main: cattleToDrive = 50
+Main->>Drovers: hireDrovers(cattleToDrive / 10)
+Drovers->>Database: require("./database.js")
+Drovers->>Database: database.drovers
+Drovers-->>Main: drovers array
+
+ Main->>Cattle: roundup(cattleToDrive)
+ Cattle->>Database: require("./database.js")
+ Cattle->>Database: database.cattleTypes
+ Cattle-->>Main: cattle array
+
+Main->>Journey: journeyMaker()
+Journey->>Utils: require("./utils.js")
+Journey->>Journey: createRivers()
+Journey->>Journey: createMountains()
+Journey->>Journey: createForests()
+Journey->>Journey: createPlains()
+Journey->>Utils: randomize(journey)
+Utils-->>Journey: randomized journey
+Journey-->>Main: journey array
+
+Main->>Main: console.log outputs

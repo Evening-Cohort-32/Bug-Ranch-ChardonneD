@@ -51,5 +51,6 @@ const journeyMaker = () => {
 
 module.exports = {
     createRivers, createForests,
-    createMountains, createPlains, journeyMaker
+    createMountains, createPlains,
+    journeyMaker
 }
